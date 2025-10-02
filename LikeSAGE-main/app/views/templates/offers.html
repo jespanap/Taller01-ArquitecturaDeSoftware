@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block title %}Buscar Empleo - Magneto{% endblock %}
+ 
+{% block content %}
+ 
+<form action="/buscar" method="get" class="mb-6 flex">
+    <input type="text" name="q" placeholder="Busca empleo por cargo o profesión" value="{{ query }}"
+           class="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none">
+    <button type="submit" class="bg-green-500 text-white px-6 rounded-r">Buscar</button>
+</form>
+ 
+<h2 class="text-xl font-semibold mb-4">Ofertas de empleo</h2>
+ 
+{% if vacancy %}
+    <div class="space-y-6">
+        {% for v in vacancy %}
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300 relative">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">
+                            <a href="/offers/{{ v.titulo | urlencode }}" class="hover:underline">{{ v.titulo }}</a>
+                        </h3>
+                        <p class="text-gray-500">{{ v.empresa }}</p>
+                        <p class="text-sm text-gray-400">{{ v.ciudad }}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-green-600 font-semibold">{{ v.salario }}</p>
+                        <p class="text-sm text-gray-400">{{ v.tipo_contrato }}</p>
+                    </div>
+                </div>
+ 
+                <p class="mt-4 text-gray-600 text-sm line-clamp-2">{{ v.descripcion }}</p>
+ 
+                <ul class="mt-2 text-sm text-gray-500 list-disc list-inside">
+                    {% for h in v.habilidades %}
+                        <li>{{ h }}</li>
+                    {% endfor %}
+                </ul>
+ 
+                {% if user %}
+                    <div class="flex items-center justify-end space-x-6 mt-6">
+ 
+                        <!-- Me gusta -->
+                        <form method="post" action="/offers/interact">
+                            <input type="hidden" name="titulo" value="{{ v.titulo }}">
+                            <input type="hidden" name="accion" value="like">
+                            <input type="hidden" name="page" value="{{ page }}">
+                            <button type="submit" class="text-red-500 hover:text-red-700" title="Me gusta" onclick="animateLike(this)">
+                                <i class="{% if v.liked %}fa-solid{% else %}fa-regular{% endif %} fa-heart toggle-icon"></i>
+                            </button>
+                        </form>
+ 
+                        <!-- Guardar -->
+                        <form method="post" action="/offers/interact">
+                            <input type="hidden" name="titulo" value="{{ v.titulo }}">
+                            <input type="hidden" name="accion" value="save">
+                            <input type="hidden" name="page" value="{{ page }}">
+                            <button type="submit" class="text-blue-500 hover:text-blue-700" title="Guardar" onclick="animateSave(this)">
+                                <i class="{% if v.saved %}fa-solid{% else %}fa-regular{% endif %} fa-bookmark toggle-icon"></i>
+                            </button>
+                        </form>
+ 
+                        <!-- Compartir -->
+                        <form method="post" action="/offers/share">
+                            <input type="hidden" name="vacancy_title" value="{{ v.titulo }}">
+                            <input type="hidden" name="page" value="{{ page }}">
+                            <button type="submit" class="text-green-500 hover:text-green-700" title="Compartir">
+                                <i class="fa-regular fa-share-from-square"></i>
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+ 
+                <div class="mt-4 text-right">
+                    <a href="/oferta/{{ v.titulo | urlencode }}" class="text-green-500 font-semibold hover:underline">Ver más</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+ 
+    <div class="mt-6 flex justify-between items-center text-sm text-gray-600">
+        {% if page > 1 %}
+            <a href="/offers?page={{ page - 1 }}" class="text-green-500 hover:underline">⬅️ Anterior</a>
+        {% endif %}
+        <span>Página {{ page }} de {{ total_pages }}</span>
+        {% if page < total_pages %}
+            <a href="/offers?page={{ page + 1 }}" class="text-green-500 hover:underline">Siguiente ➡️</a>
+        {% endif %}
+    </div>
+{% else %}
+    <div class="bg-white p-6 rounded-lg shadow text-center text-gray-500">
+        No se encontraron ofertas para "{{ query }}"
+    </div>
+{% endif %}
+ 
+<script>
+    function animateLike(button) {
+        const icon = button.querySelector('.toggle-icon');
+        icon.classList.add('bump');
+        toggleIcon(icon, 'fa-heart');
+        setTimeout(() => icon.classList.remove('bump'), 400);
+    }
+ 
+    function animateSave(button) {
+        const icon = button.querySelector('.toggle-icon');
+        icon.classList.add('spin');
+        toggleIcon(icon, 'fa-bookmark');
+        setTimeout(() => icon.classList.remove('spin'), 600);
+    }
+ 
+    function toggleIcon(icon, baseClass) {
+        if (icon.classList.contains('fa-regular')) {
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid');
+        } else {
+            icon.classList.remove('fa-solid');
+            icon.classList.add('fa-regular');
+        }
+    }
+</script>
+ 
+ 
+<style>
+    .bump {
+        animation: bump 0.3s;
+    }
+ 
+    .spin {
+        animation: spin 0.6s;
+    }
+ 
+    @keyframes bump {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+ 
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+{% endblock %}
+ 
+ 

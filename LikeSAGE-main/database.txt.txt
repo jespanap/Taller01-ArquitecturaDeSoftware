@@ -1,0 +1,1433 @@
+// === Oferta 1: Berlitz ===
+MERGE (v1:Vacancy {title: "Instructor De Inglés En Bogotá Presencial"})
+MERGE (comp1:Company {name: "Berlitz Colombia"})
+MERGE (city1:City {name: "Bogotá"})
+MERGE (edu1:EducationLevel {level: "tecnólogo hasta otros"})
+MERGE (xp1:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v1)-[:PUBLISHED_BY]->(comp1)
+MERGE (v1)-[:LOCATED_IN]->(city1)
+MERGE (v1)-[:REQUIRES_EDUCATION]->(edu1)
+MERGE (v1)-[:REQUIRES_EXPERIENCE]->(xp1)
+WITH v1
+UNWIND [
+  "Inglés", "Profesor", "Instructor", "Bilingüe", "Docente",
+  "Enseñanza", "Idiomas", "Lenguas Modernas"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v1)-[:REQUIRES_SKILL]->(k);
+
+// === Oferta 2: Ara ===
+MERGE (v2:Vacancy {title: "Supervisor Comercial - Bogota Martires Plaza España"})
+MERGE (comp2:Company {name: "Ara"})
+MERGE (city2:City {name: "Bogotá"})
+MERGE (edu2:EducationLevel {level: "Bachillerato completo hasta profesional"})
+MERGE (xp2:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v2)-[:PUBLISHED_BY]->(comp2)
+MERGE (v2)-[:LOCATED_IN]->(city2)
+MERGE (v2)-[:REQUIRES_EDUCATION]->(edu2)
+MERGE (v2)-[:REQUIRES_EXPERIENCE]->(xp2)
+WITH v2
+UNWIND [
+  "Supervisor", "Comercial", "Ventas", "Gestión", "Cliente",
+  "Tienda", "Turnos", "Bodega", "Administración"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v2)-[:REQUIRES_SKILL]->(k);
+
+// === Oferta 3: Sura ===
+MERGE (v3:Vacancy {title: "Auxiliar de Enfermería Domiciliaria – Bogotá"})
+MERGE (comp3:Company {name: "Sura"})
+MERGE (city3:City {name: "Bogotá"})
+MERGE (edu3:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp3:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v3)-[:PUBLISHED_BY]->(comp3)
+MERGE (v3)-[:LOCATED_IN]->(city3)
+MERGE (v3)-[:REQUIRES_EDUCATION]->(edu3)
+MERGE (v3)-[:REQUIRES_EXPERIENCE]->(xp3)
+WITH v3
+UNWIND [
+  "Auxiliar", "Enfermería", "Salud", "Pacientes", "Domiciliaria",
+  "Atención", "Clínica", "Hospitalaria", "Servicios de salud"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v3)-[:REQUIRES_SKILL]->(k);
+// === Oferta 4: Éxito ===
+MERGE (v4:Vacancy {title: "Cajero(a) Tiempo Completo – Bogotá"})
+MERGE (comp4:Company {name: "Grupo Éxito"})
+MERGE (city4:City {name: "Bogotá"})
+MERGE (edu4:EducationLevel {level: "Bachillerato completo hasta técnico"})
+MERGE (xp4:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v4)-[:PUBLISHED_BY]->(comp4)
+MERGE (v4)-[:LOCATED_IN]->(city4)
+MERGE (v4)-[:REQUIRES_EDUCATION]->(edu4)
+MERGE (v4)-[:REQUIRES_EXPERIENCE]->(xp4)
+WITH v4
+UNWIND [
+  "Cajero", "Atención al cliente", "Caja registradora", "Punto de venta",
+  "Inventario", "Dinero", "Facturación", "Servicio", "Tienda"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v4)-[:REQUIRES_SKILL]->(k);
+// === Oferta 5: Rappi ===
+MERGE (v5:Vacancy {title: "Desarrollador Backend – Medellín"})
+MERGE (comp5:Company {name: "Rappi"})
+MERGE (city5:City {name: "Medellín"})
+MERGE (edu5:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp5:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v5)-[:PUBLISHED_BY]->(comp5)
+MERGE (v5)-[:LOCATED_IN]->(city5)
+MERGE (v5)-[:REQUIRES_EDUCATION]->(edu5)
+MERGE (v5)-[:REQUIRES_EXPERIENCE]->(xp5)
+WITH v5
+UNWIND [
+  "Backend", "Node.js", "API", "Microservicios", "Bases de datos",
+  "JavaScript", "Programación", "Sistemas distribuidos", "Git"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v5)-[:REQUIRES_SKILL]->(k);
+// === Oferta 6: Alpina ===
+MERGE (v6:Vacancy {title: "Operario de Producción – Sopó"})
+MERGE (comp6:Company {name: "Alpina"})
+MERGE (city6:City {name: "Sopó"})
+MERGE (edu6:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp6:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v6)-[:PUBLISHED_BY]->(comp6)
+MERGE (v6)-[:LOCATED_IN]->(city6)
+MERGE (v6)-[:REQUIRES_EDUCATION]->(edu6)
+MERGE (v6)-[:REQUIRES_EXPERIENCE]->(xp6)
+WITH v6
+UNWIND [
+  "Producción", "Operario", "Calidad", "Turnos", "Empaque",
+  "Mantenimiento", "Seguridad industrial", "Manufactura", "Planta"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v6)-[:REQUIRES_SKILL]->(k);
+// === Oferta 7: Avianca ===
+MERGE (v7:Vacancy {title: "Auxiliar de Servicio al Cliente – Aeropuerto Cali"})
+MERGE (comp7:Company {name: "Avianca"})
+MERGE (city7:City {name: "Cali"})
+MERGE (edu7:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp7:ExperienceLevel {level: "sin experiencia"})
+MERGE (v7)-[:PUBLISHED_BY]->(comp7)
+MERGE (v7)-[:LOCATED_IN]->(city7)
+MERGE (v7)-[:REQUIRES_EDUCATION]->(edu7)
+MERGE (v7)-[:REQUIRES_EXPERIENCE]->(xp7)
+WITH v7
+UNWIND [
+  "Servicio al cliente", "Atención", "Aeropuerto", "Pasajeros", "Check-in",
+  "Comunicación", "Turnos", "Reservas", "Tiquetes"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v7)-[:REQUIRES_SKILL]->(k);
+// === Oferta 8: Globant (Remoto) ===
+MERGE (v8:Vacancy {title: "Diseñador UX-UI – Trabajo Remoto"})
+MERGE (comp8:Company {name: "Globant"})
+MERGE (city8:City {name: "Remoto"})
+MERGE (edu8:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp8:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v8)-[:PUBLISHED_BY]->(comp8)
+MERGE (v8)-[:LOCATED_IN]->(city8)
+MERGE (v8)-[:REQUIRES_EDUCATION]->(edu8)
+MERGE (v8)-[:REQUIRES_EXPERIENCE]->(xp8)
+WITH v8
+UNWIND [
+  "UX", "UI", "Diseño", "Prototipado", "Figma",
+  "Sketch", "Investigación de usuarios", "Wireframes", "Interfaz"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v8)-[:REQUIRES_SKILL]->(k);
+// === Oferta 9: Olímpica ===
+MERGE (v9:Vacancy {title: "Auxiliar de Aseo – Barranquilla"})
+MERGE (comp9:Company {name: "Olímpica"})
+MERGE (city9:City {name: "Barranquilla"})
+MERGE (edu9:EducationLevel {level: "sin requisitos"})
+MERGE (xp9:ExperienceLevel {level: "sin experiencia"})
+MERGE (v9)-[:PUBLISHED_BY]->(comp9)
+MERGE (v9)-[:LOCATED_IN]->(city9)
+MERGE (v9)-[:REQUIRES_EDUCATION]->(edu9)
+MERGE (v9)-[:REQUIRES_EXPERIENCE]->(xp9)
+WITH v9
+UNWIND [
+  "Aseo", "Limpieza", "Orden", "Ambientes", "Espacios", 
+  "Desinfección", "Turnos", "Responsabilidad", "Puntualidad"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v9)-[:REQUIRES_SKILL]->(k);
+// === Oferta 10: Universidad de los Andes ===
+MERGE (v10:Vacancy {title: "Asistente Administrativo – Bogotá"})
+MERGE (comp10:Company {name: "Universidad de los Andes"})
+MERGE (city10:City {name: "Bogotá"})
+MERGE (edu10:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp10:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v10)-[:PUBLISHED_BY]->(comp10)
+MERGE (v10)-[:LOCATED_IN]->(city10)
+MERGE (v10)-[:REQUIRES_EDUCATION]->(edu10)
+MERGE (v10)-[:REQUIRES_EXPERIENCE]->(xp10)
+WITH v10
+UNWIND [
+  "Administrativo", "Ofimática", "Documentación", "Atención",
+  "Recepción", "Apoyo", "Trámites", "Gestión", "Comunicación"
+] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v10)-[:REQUIRES_SKILL]->(k);
+// === Oferta 11: Teleperformance ===
+MERGE (v11:Vacancy {title: "Auxiliar Contable – Cali"})
+MERGE (comp11:Company {name: "Teleperformance"})
+MERGE (city11:City {name: "Cali"})
+MERGE (edu11:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp11:ExperienceLevel {level: "sin experiencia"})
+MERGE (v11)-[:PUBLISHED_BY]->(comp11)
+MERGE (v11)-[:LOCATED_IN]->(city11)
+MERGE (v11)-[:REQUIRES_EDUCATION]->(edu11)
+MERGE (v11)-[:REQUIRES_EXPERIENCE]->(xp11)
+WITH v11
+UNWIND ['Facturación', 'Contabilidad', 'Cartera', 'Excel', 'Registros'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v11)-[:REQUIRES_SKILL]->(k);
+// === Oferta 12: Nutresa ===
+MERGE (v12:Vacancy {title: "Desarrollador Frontend – Cartagena"})
+MERGE (comp12:Company {name: "Nutresa"})
+MERGE (city12:City {name: "Cartagena"})
+MERGE (edu12:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp12:ExperienceLevel {level: "sin experiencia"})
+MERGE (v12)-[:PUBLISHED_BY]->(comp12)
+MERGE (v12)-[:LOCATED_IN]->(city12)
+MERGE (v12)-[:REQUIRES_EDUCATION]->(edu12)
+MERGE (v12)-[:REQUIRES_EXPERIENCE]->(xp12)
+WITH v12
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v12)-[:REQUIRES_SKILL]->(k);
+// === Oferta 13: Mercado Libre ===
+MERGE (v13:Vacancy {title: "Ingeniero Mecánico – Villavicencio"})
+MERGE (comp13:Company {name: "Mercado Libre"})
+MERGE (city13:City {name: "Villavicencio"})
+MERGE (edu13:EducationLevel {level: "sin requisitos"})
+MERGE (xp13:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v13)-[:PUBLISHED_BY]->(comp13)
+MERGE (v13)-[:LOCATED_IN]->(city13)
+MERGE (v13)-[:REQUIRES_EDUCATION]->(edu13)
+MERGE (v13)-[:REQUIRES_EXPERIENCE]->(xp13)
+WITH v13
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v13)-[:REQUIRES_SKILL]->(k);
+// === Oferta 14: Tigo ===
+MERGE (v14:Vacancy {title: "Analista de Datos – Medellín"})
+MERGE (comp14:Company {name: "Tigo"})
+MERGE (city14:City {name: "Medellín"})
+MERGE (edu14:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp14:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v14)-[:PUBLISHED_BY]->(comp14)
+MERGE (v14)-[:LOCATED_IN]->(city14)
+MERGE (v14)-[:REQUIRES_EDUCATION]->(edu14)
+MERGE (v14)-[:REQUIRES_EXPERIENCE]->(xp14)
+WITH v14
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v14)-[:REQUIRES_SKILL]->(k);
+// === Oferta 15: Cinemark ===
+MERGE (v15:Vacancy {title: "Analista de Datos – Bucaramanga"})
+MERGE (comp15:Company {name: "Cinemark"})
+MERGE (city15:City {name: "Bucaramanga"})
+MERGE (edu15:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp15:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v15)-[:PUBLISHED_BY]->(comp15)
+MERGE (v15)-[:LOCATED_IN]->(city15)
+MERGE (v15)-[:REQUIRES_EDUCATION]->(edu15)
+MERGE (v15)-[:REQUIRES_EXPERIENCE]->(xp15)
+WITH v15
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v15)-[:REQUIRES_SKILL]->(k);
+// === Oferta 16: Falabella ===
+MERGE (v16:Vacancy {title: "Auxiliar de Bodega – Cali"})
+MERGE (comp16:Company {name: "Falabella"})
+MERGE (city16:City {name: "Cali"})
+MERGE (edu16:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp16:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v16)-[:PUBLISHED_BY]->(comp16)
+MERGE (v16)-[:LOCATED_IN]->(city16)
+MERGE (v16)-[:REQUIRES_EDUCATION]->(edu16)
+MERGE (v16)-[:REQUIRES_EXPERIENCE]->(xp16)
+WITH v16
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v16)-[:REQUIRES_SKILL]->(k);
+// === Oferta 17: Postobón ===
+MERGE (v17:Vacancy {title: "Médico General – Bucaramanga"})
+MERGE (comp17:Company {name: "Postobón"})
+MERGE (city17:City {name: "Bucaramanga"})
+MERGE (edu17:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp17:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v17)-[:PUBLISHED_BY]->(comp17)
+MERGE (v17)-[:LOCATED_IN]->(city17)
+MERGE (v17)-[:REQUIRES_EDUCATION]->(edu17)
+MERGE (v17)-[:REQUIRES_EXPERIENCE]->(xp17)
+WITH v17
+UNWIND ['Consulta', 'Diagnóstico', 'Salud', 'Pacientes', 'Recetas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v17)-[:REQUIRES_SKILL]->(k);
+// === Oferta 18: Bancolombia ===
+MERGE (v18:Vacancy {title: "Analista de Datos – Armenia"})
+MERGE (comp18:Company {name: "Bancolombia"})
+MERGE (city18:City {name: "Armenia"})
+MERGE (edu18:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp18:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v18)-[:PUBLISHED_BY]->(comp18)
+MERGE (v18)-[:LOCATED_IN]->(city18)
+MERGE (v18)-[:REQUIRES_EDUCATION]->(edu18)
+MERGE (v18)-[:REQUIRES_EXPERIENCE]->(xp18)
+WITH v18
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v18)-[:REQUIRES_SKILL]->(k);
+// === Oferta 19: Claro ===
+MERGE (v19:Vacancy {title: "Analista de Datos – Manizales"})
+MERGE (comp19:Company {name: "Claro"})
+MERGE (city19:City {name: "Manizales"})
+MERGE (edu19:EducationLevel {level: "sin requisitos"})
+MERGE (xp19:ExperienceLevel {level: "sin experiencia"})
+MERGE (v19)-[:PUBLISHED_BY]->(comp19)
+MERGE (v19)-[:LOCATED_IN]->(city19)
+MERGE (v19)-[:REQUIRES_EDUCATION]->(edu19)
+MERGE (v19)-[:REQUIRES_EXPERIENCE]->(xp19)
+WITH v19
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v19)-[:REQUIRES_SKILL]->(k);
+// === Oferta 20: Enel ===
+MERGE (v20:Vacancy {title: "Ingeniero de Software – Pereira"})
+MERGE (comp20:Company {name: "Enel"})
+MERGE (city20:City {name: "Pereira"})
+MERGE (edu20:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp20:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v20)-[:PUBLISHED_BY]->(comp20)
+MERGE (v20)-[:LOCATED_IN]->(city20)
+MERGE (v20)-[:REQUIRES_EDUCATION]->(edu20)
+MERGE (v20)-[:REQUIRES_EXPERIENCE]->(xp20)
+WITH v20
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v20)-[:REQUIRES_SKILL]->(k);
+// === Oferta 21: Enel ===
+MERGE (v21:Vacancy {title: "Abogado Junior – Cartagena"})
+MERGE (comp21:Company {name: "Enel"})
+MERGE (city21:City {name: "Cartagena"})
+MERGE (edu21:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp21:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v21)-[:PUBLISHED_BY]->(comp21)
+MERGE (v21)-[:LOCATED_IN]->(city21)
+MERGE (v21)-[:REQUIRES_EDUCATION]->(edu21)
+MERGE (v21)-[:REQUIRES_EXPERIENCE]->(xp21)
+WITH v21
+UNWIND ['Derecho', 'Contratos', 'Procesos', 'Normativa', 'Legal'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v21)-[:REQUIRES_SKILL]->(k);
+// === Oferta 22: Sodexo ===
+MERGE (v22:Vacancy {title: "Médico General – Bucaramanga"})
+MERGE (comp22:Company {name: "Sodexo"})
+MERGE (city22:City {name: "Bucaramanga"})
+MERGE (edu22:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp22:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v22)-[:PUBLISHED_BY]->(comp22)
+MERGE (v22)-[:LOCATED_IN]->(city22)
+MERGE (v22)-[:REQUIRES_EDUCATION]->(edu22)
+MERGE (v22)-[:REQUIRES_EXPERIENCE]->(xp22)
+WITH v22
+UNWIND ['Consulta', 'Diagnóstico', 'Salud', 'Pacientes', 'Recetas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v22)-[:REQUIRES_SKILL]->(k);
+// === Oferta 23: Teleperformance ===
+MERGE (v23:Vacancy {title: "Ingeniero Mecánico – Bucaramanga"})
+MERGE (comp23:Company {name: "Teleperformance"})
+MERGE (city23:City {name: "Bucaramanga"})
+MERGE (edu23:EducationLevel {level: "sin requisitos"})
+MERGE (xp23:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v23)-[:PUBLISHED_BY]->(comp23)
+MERGE (v23)-[:LOCATED_IN]->(city23)
+MERGE (v23)-[:REQUIRES_EDUCATION]->(edu23)
+MERGE (v23)-[:REQUIRES_EXPERIENCE]->(xp23)
+WITH v23
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v23)-[:REQUIRES_SKILL]->(k);
+// === Oferta 24: Grupo Argos ===
+MERGE (v24:Vacancy {title: "Supervisor de Producción – Bogotá"})
+MERGE (comp24:Company {name: "Grupo Argos"})
+MERGE (city24:City {name: "Bogotá"})
+MERGE (edu24:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp24:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v24)-[:PUBLISHED_BY]->(comp24)
+MERGE (v24)-[:LOCATED_IN]->(city24)
+MERGE (v24)-[:REQUIRES_EDUCATION]->(edu24)
+MERGE (v24)-[:REQUIRES_EXPERIENCE]->(xp24)
+WITH v24
+UNWIND ['Producción', 'Supervisión', 'Indicadores', 'Mejora continua', 'Turnos'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v24)-[:REQUIRES_SKILL]->(k);
+// === Oferta 25: Nutresa ===
+MERGE (v25:Vacancy {title: "Cocinero – Manizales"})
+MERGE (comp25:Company {name: "Nutresa"})
+MERGE (city25:City {name: "Manizales"})
+MERGE (edu25:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp25:ExperienceLevel {level: "sin experiencia"})
+MERGE (v25)-[:PUBLISHED_BY]->(comp25)
+MERGE (v25)-[:LOCATED_IN]->(city25)
+MERGE (v25)-[:REQUIRES_EDUCATION]->(edu25)
+MERGE (v25)-[:REQUIRES_EXPERIENCE]->(xp25)
+WITH v25
+UNWIND ['Cocina', 'Recetas', 'Ingredientes', 'Higiene', 'Preparación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v25)-[:REQUIRES_SKILL]->(k);
+// === Oferta 26: Cinemark ===
+MERGE (v26:Vacancy {title: "Analista de Datos – Cali"})
+MERGE (comp26:Company {name: "Cinemark"})
+MERGE (city26:City {name: "Cali"})
+MERGE (edu26:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp26:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v26)-[:PUBLISHED_BY]->(comp26)
+MERGE (v26)-[:LOCATED_IN]->(city26)
+MERGE (v26)-[:REQUIRES_EDUCATION]->(edu26)
+MERGE (v26)-[:REQUIRES_EXPERIENCE]->(xp26)
+WITH v26
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v26)-[:REQUIRES_SKILL]->(k);
+// === Oferta 27: Teleperformance ===
+MERGE (v27:Vacancy {title: "Vendedor de Mostrador – Barranquilla"})
+MERGE (comp27:Company {name: "Teleperformance"})
+MERGE (city27:City {name: "Barranquilla"})
+MERGE (edu27:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp27:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v27)-[:PUBLISHED_BY]->(comp27)
+MERGE (v27)-[:LOCATED_IN]->(city27)
+MERGE (v27)-[:REQUIRES_EDUCATION]->(edu27)
+MERGE (v27)-[:REQUIRES_EXPERIENCE]->(xp27)
+WITH v27
+UNWIND ['Ventas', 'Cliente', 'Tienda', 'Inventario', 'Cierre de caja'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v27)-[:REQUIRES_SKILL]->(k);
+// === Oferta 28: Alkosto ===
+MERGE (v28:Vacancy {title: "Psicólogo Organizacional – Barranquilla"})
+MERGE (comp28:Company {name: "Alkosto"})
+MERGE (city28:City {name: "Barranquilla"})
+MERGE (edu28:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp28:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v28)-[:PUBLISHED_BY]->(comp28)
+MERGE (v28)-[:LOCATED_IN]->(city28)
+MERGE (v28)-[:REQUIRES_EDUCATION]->(edu28)
+MERGE (v28)-[:REQUIRES_EXPERIENCE]->(xp28)
+WITH v28
+UNWIND ['Selección', 'RRHH', 'Entrevistas', 'Evaluación', 'Bienestar'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v28)-[:REQUIRES_SKILL]->(k);
+// === Oferta 29: Mercado Libre ===
+MERGE (v29:Vacancy {title: "Técnico en Redes – Manizales"})
+MERGE (comp29:Company {name: "Mercado Libre"})
+MERGE (city29:City {name: "Manizales"})
+MERGE (edu29:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp29:ExperienceLevel {level: "sin experiencia"})
+MERGE (v29)-[:PUBLISHED_BY]->(comp29)
+MERGE (v29)-[:LOCATED_IN]->(city29)
+MERGE (v29)-[:REQUIRES_EDUCATION]->(edu29)
+MERGE (v29)-[:REQUIRES_EXPERIENCE]->(xp29)
+WITH v29
+UNWIND ['Redes', 'Cisco', 'Mantenimiento', 'Seguridad', 'Cableado'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v29)-[:REQUIRES_SKILL]->(k);
+// === Oferta 30: Decathlon ===
+MERGE (v30:Vacancy {title: "Community Manager – Cali"})
+MERGE (comp30:Company {name: "Decathlon"})
+MERGE (city30:City {name: "Cali"})
+MERGE (edu30:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp30:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v30)-[:PUBLISHED_BY]->(comp30)
+MERGE (v30)-[:LOCATED_IN]->(city30)
+MERGE (v30)-[:REQUIRES_EDUCATION]->(edu30)
+MERGE (v30)-[:REQUIRES_EXPERIENCE]->(xp30)
+WITH v30
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v30)-[:REQUIRES_SKILL]->(k);
+// === Oferta 31: Cinemark ===
+MERGE (v31:Vacancy {title: "Ingeniero de Software – Barranquilla"})
+MERGE (comp31:Company {name: "Cinemark"})
+MERGE (city31:City {name: "Barranquilla"})
+MERGE (edu31:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp31:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v31)-[:PUBLISHED_BY]->(comp31)
+MERGE (v31)-[:LOCATED_IN]->(city31)
+MERGE (v31)-[:REQUIRES_EDUCATION]->(edu31)
+MERGE (v31)-[:REQUIRES_EXPERIENCE]->(xp31)
+WITH v31
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v31)-[:REQUIRES_SKILL]->(k);
+// === Oferta 32: Nutresa ===
+MERGE (v32:Vacancy {title: "Vendedor de Mostrador – Manizales"})
+MERGE (comp32:Company {name: "Nutresa"})
+MERGE (city32:City {name: "Manizales"})
+MERGE (edu32:EducationLevel {level: "sin requisitos"})
+MERGE (xp32:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v32)-[:PUBLISHED_BY]->(comp32)
+MERGE (v32)-[:LOCATED_IN]->(city32)
+MERGE (v32)-[:REQUIRES_EDUCATION]->(edu32)
+MERGE (v32)-[:REQUIRES_EXPERIENCE]->(xp32)
+WITH v32
+UNWIND ['Ventas', 'Cliente', 'Tienda', 'Inventario', 'Cierre de caja'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v32)-[:REQUIRES_SKILL]->(k);
+// === Oferta 33: Tigo ===
+MERGE (v33:Vacancy {title: "Auxiliar Logístico – Barranquilla"})
+MERGE (comp33:Company {name: "Tigo"})
+MERGE (city33:City {name: "Barranquilla"})
+MERGE (edu33:EducationLevel {level: "sin requisitos"})
+MERGE (xp33:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v33)-[:PUBLISHED_BY]->(comp33)
+MERGE (v33)-[:LOCATED_IN]->(city33)
+MERGE (v33)-[:REQUIRES_EDUCATION]->(edu33)
+MERGE (v33)-[:REQUIRES_EXPERIENCE]->(xp33)
+WITH v33
+UNWIND ['Logística', 'Transporte', 'Alistamiento', 'Pedidos', 'Ruta'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v33)-[:REQUIRES_SKILL]->(k);
+// === Oferta 34: Davivienda ===
+MERGE (v34:Vacancy {title: "Desarrollador Frontend – Cartagena"})
+MERGE (comp34:Company {name: "Davivienda"})
+MERGE (city34:City {name: "Cartagena"})
+MERGE (edu34:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp34:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v34)-[:PUBLISHED_BY]->(comp34)
+MERGE (v34)-[:LOCATED_IN]->(city34)
+MERGE (v34)-[:REQUIRES_EDUCATION]->(edu34)
+MERGE (v34)-[:REQUIRES_EXPERIENCE]->(xp34)
+WITH v34
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v34)-[:REQUIRES_SKILL]->(k);
+// === Oferta 35: Mercado Libre ===
+MERGE (v35:Vacancy {title: "Ingeniero de Software – Cartagena"})
+MERGE (comp35:Company {name: "Mercado Libre"})
+MERGE (city35:City {name: "Cartagena"})
+MERGE (edu35:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp35:ExperienceLevel {level: "sin experiencia"})
+MERGE (v35)-[:PUBLISHED_BY]->(comp35)
+MERGE (v35)-[:LOCATED_IN]->(city35)
+MERGE (v35)-[:REQUIRES_EDUCATION]->(edu35)
+MERGE (v35)-[:REQUIRES_EXPERIENCE]->(xp35)
+WITH v35
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v35)-[:REQUIRES_SKILL]->(k);
+// === Oferta 36: Enel ===
+MERGE (v36:Vacancy {title: "Técnico Electricista – Armenia"})
+MERGE (comp36:Company {name: "Enel"})
+MERGE (city36:City {name: "Armenia"})
+MERGE (edu36:EducationLevel {level: "sin requisitos"})
+MERGE (xp36:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v36)-[:PUBLISHED_BY]->(comp36)
+MERGE (v36)-[:LOCATED_IN]->(city36)
+MERGE (v36)-[:REQUIRES_EDUCATION]->(edu36)
+MERGE (v36)-[:REQUIRES_EXPERIENCE]->(xp36)
+WITH v36
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v36)-[:REQUIRES_SKILL]->(k);
+// === Oferta 37: Davivienda ===
+MERGE (v37:Vacancy {title: "Ingeniero de Software – Pereira"})
+MERGE (comp37:Company {name: "Davivienda"})
+MERGE (city37:City {name: "Pereira"})
+MERGE (edu37:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp37:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v37)-[:PUBLISHED_BY]->(comp37)
+MERGE (v37)-[:LOCATED_IN]->(city37)
+MERGE (v37)-[:REQUIRES_EDUCATION]->(edu37)
+MERGE (v37)-[:REQUIRES_EXPERIENCE]->(xp37)
+WITH v37
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v37)-[:REQUIRES_SKILL]->(k);
+// === Oferta 38: Falabella ===
+MERGE (v38:Vacancy {title: "Diseñador Gráfico – Bogotá"})
+MERGE (comp38:Company {name: "Falabella"})
+MERGE (city38:City {name: "Bogotá"})
+MERGE (edu38:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp38:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v38)-[:PUBLISHED_BY]->(comp38)
+MERGE (v38)-[:LOCATED_IN]->(city38)
+MERGE (v38)-[:REQUIRES_EDUCATION]->(edu38)
+MERGE (v38)-[:REQUIRES_EXPERIENCE]->(xp38)
+WITH v38
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v38)-[:REQUIRES_SKILL]->(k);
+// === Oferta 39: Alkosto ===
+MERGE (v39:Vacancy {title: "Auxiliar de Bodega – Bogotá"})
+MERGE (comp39:Company {name: "Alkosto"})
+MERGE (city39:City {name: "Bogotá"})
+MERGE (edu39:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp39:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v39)-[:PUBLISHED_BY]->(comp39)
+MERGE (v39)-[:LOCATED_IN]->(city39)
+MERGE (v39)-[:REQUIRES_EDUCATION]->(edu39)
+MERGE (v39)-[:REQUIRES_EXPERIENCE]->(xp39)
+WITH v39
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v39)-[:REQUIRES_SKILL]->(k);
+// === Oferta 40: Falabella ===
+MERGE (v40:Vacancy {title: "Contador Público – Villavicencio"})
+MERGE (comp40:Company {name: "Falabella"})
+MERGE (city40:City {name: "Villavicencio"})
+MERGE (edu40:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp40:ExperienceLevel {level: "sin experiencia"})
+MERGE (v40)-[:PUBLISHED_BY]->(comp40)
+MERGE (v40)-[:LOCATED_IN]->(city40)
+MERGE (v40)-[:REQUIRES_EDUCATION]->(edu40)
+MERGE (v40)-[:REQUIRES_EXPERIENCE]->(xp40)
+WITH v40
+UNWIND ['Contabilidad', 'Impuestos', 'NIIF', 'Auditoría', 'Excel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v40)-[:REQUIRES_SKILL]->(k);
+// === Oferta 41: Cinemark ===
+MERGE (v41:Vacancy {title: "Auxiliar Contable – Medellín"})
+MERGE (comp41:Company {name: "Cinemark"})
+MERGE (city41:City {name: "Medellín"})
+MERGE (edu41:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp41:ExperienceLevel {level: "sin experiencia"})
+MERGE (v41)-[:PUBLISHED_BY]->(comp41)
+MERGE (v41)-[:LOCATED_IN]->(city41)
+MERGE (v41)-[:REQUIRES_EDUCATION]->(edu41)
+MERGE (v41)-[:REQUIRES_EXPERIENCE]->(xp41)
+WITH v41
+UNWIND ['Facturación', 'Contabilidad', 'Cartera', 'Excel', 'Registros'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v41)-[:REQUIRES_SKILL]->(k);
+// === Oferta 42: Decathlon ===
+MERGE (v42:Vacancy {title: "Cocinero – Armenia"})
+MERGE (comp42:Company {name: "Decathlon"})
+MERGE (city42:City {name: "Armenia"})
+MERGE (edu42:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp42:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v42)-[:PUBLISHED_BY]->(comp42)
+MERGE (v42)-[:LOCATED_IN]->(city42)
+MERGE (v42)-[:REQUIRES_EDUCATION]->(edu42)
+MERGE (v42)-[:REQUIRES_EXPERIENCE]->(xp42)
+WITH v42
+UNWIND ['Cocina', 'Recetas', 'Ingredientes', 'Higiene', 'Preparación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v42)-[:REQUIRES_SKILL]->(k);
+// === Oferta 43: Postobón ===
+MERGE (v43:Vacancy {title: "Ingeniero de Software – Bogotá"})
+MERGE (comp43:Company {name: "Postobón"})
+MERGE (city43:City {name: "Bogotá"})
+MERGE (edu43:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp43:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v43)-[:PUBLISHED_BY]->(comp43)
+MERGE (v43)-[:LOCATED_IN]->(city43)
+MERGE (v43)-[:REQUIRES_EDUCATION]->(edu43)
+MERGE (v43)-[:REQUIRES_EXPERIENCE]->(xp43)
+WITH v43
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v43)-[:REQUIRES_SKILL]->(k);
+// === Oferta 44: Decathlon ===
+MERGE (v44:Vacancy {title: "Técnico en Redes – Barranquilla"})
+MERGE (comp44:Company {name: "Decathlon"})
+MERGE (city44:City {name: "Barranquilla"})
+MERGE (edu44:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp44:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v44)-[:PUBLISHED_BY]->(comp44)
+MERGE (v44)-[:LOCATED_IN]->(city44)
+MERGE (v44)-[:REQUIRES_EDUCATION]->(edu44)
+MERGE (v44)-[:REQUIRES_EXPERIENCE]->(xp44)
+WITH v44
+UNWIND ['Redes', 'Cisco', 'Mantenimiento', 'Seguridad', 'Cableado'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v44)-[:REQUIRES_SKILL]->(k);
+// === Oferta 45: Mercado Libre ===
+MERGE (v45:Vacancy {title: "Auxiliar Contable – Manizales"})
+MERGE (comp45:Company {name: "Mercado Libre"})
+MERGE (city45:City {name: "Manizales"})
+MERGE (edu45:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp45:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v45)-[:PUBLISHED_BY]->(comp45)
+MERGE (v45)-[:LOCATED_IN]->(city45)
+MERGE (v45)-[:REQUIRES_EDUCATION]->(edu45)
+MERGE (v45)-[:REQUIRES_EXPERIENCE]->(xp45)
+WITH v45
+UNWIND ['Facturación', 'Contabilidad', 'Cartera', 'Excel', 'Registros'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v45)-[:REQUIRES_SKILL]->(k);
+// === Oferta 46: Cinemark ===
+MERGE (v46:Vacancy {title: "Agente Call Center – Manizales"})
+MERGE (comp46:Company {name: "Cinemark"})
+MERGE (city46:City {name: "Manizales"})
+MERGE (edu46:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp46:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v46)-[:PUBLISHED_BY]->(comp46)
+MERGE (v46)-[:LOCATED_IN]->(city46)
+MERGE (v46)-[:REQUIRES_EDUCATION]->(edu46)
+MERGE (v46)-[:REQUIRES_EXPERIENCE]->(xp46)
+WITH v46
+UNWIND ['Atención', 'Cliente', 'Llamadas', 'Ventas', 'Comunicación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v46)-[:REQUIRES_SKILL]->(k);
+// === Oferta 47: Davivienda ===
+MERGE (v47:Vacancy {title: "Community Manager – Pereira"})
+MERGE (comp47:Company {name: "Davivienda"})
+MERGE (city47:City {name: "Pereira"})
+MERGE (edu47:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp47:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v47)-[:PUBLISHED_BY]->(comp47)
+MERGE (v47)-[:LOCATED_IN]->(city47)
+MERGE (v47)-[:REQUIRES_EDUCATION]->(edu47)
+MERGE (v47)-[:REQUIRES_EXPERIENCE]->(xp47)
+WITH v47
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v47)-[:REQUIRES_SKILL]->(k);
+// === Oferta 48: Alkosto ===
+MERGE (v48:Vacancy {title: "Supervisor de Producción – Medellín"})
+MERGE (comp48:Company {name: "Alkosto"})
+MERGE (city48:City {name: "Medellín"})
+MERGE (edu48:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp48:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v48)-[:PUBLISHED_BY]->(comp48)
+MERGE (v48)-[:LOCATED_IN]->(city48)
+MERGE (v48)-[:REQUIRES_EDUCATION]->(edu48)
+MERGE (v48)-[:REQUIRES_EXPERIENCE]->(xp48)
+WITH v48
+UNWIND ['Producción', 'Supervisión', 'Indicadores', 'Mejora continua', 'Turnos'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v48)-[:REQUIRES_SKILL]->(k);
+// === Oferta 49: Postobón ===
+MERGE (v49:Vacancy {title: "Desarrollador Frontend – Medellín"})
+MERGE (comp49:Company {name: "Postobón"})
+MERGE (city49:City {name: "Medellín"})
+MERGE (edu49:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp49:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v49)-[:PUBLISHED_BY]->(comp49)
+MERGE (v49)-[:LOCATED_IN]->(city49)
+MERGE (v49)-[:REQUIRES_EDUCATION]->(edu49)
+MERGE (v49)-[:REQUIRES_EXPERIENCE]->(xp49)
+WITH v49
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v49)-[:REQUIRES_SKILL]->(k);
+// === Oferta 50: Enel ===
+MERGE (v50:Vacancy {title: "Cocinero – Pereira"})
+MERGE (comp50:Company {name: "Enel"})
+MERGE (city50:City {name: "Pereira"})
+MERGE (edu50:EducationLevel {level: "sin requisitos"})
+MERGE (xp50:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v50)-[:PUBLISHED_BY]->(comp50)
+MERGE (v50)-[:LOCATED_IN]->(city50)
+MERGE (v50)-[:REQUIRES_EDUCATION]->(edu50)
+MERGE (v50)-[:REQUIRES_EXPERIENCE]->(xp50)
+WITH v50
+UNWIND ['Cocina', 'Recetas', 'Ingredientes', 'Higiene', 'Preparación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v50)-[:REQUIRES_SKILL]->(k);
+// === Oferta 51: Postobón ===
+MERGE (v51:Vacancy {title: "Médico General – Medellín"})
+MERGE (comp51:Company {name: "Postobón"})
+MERGE (city51:City {name: "Medellín"})
+MERGE (edu51:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp51:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v51)-[:PUBLISHED_BY]->(comp51)
+MERGE (v51)-[:LOCATED_IN]->(city51)
+MERGE (v51)-[:REQUIRES_EDUCATION]->(edu51)
+MERGE (v51)-[:REQUIRES_EXPERIENCE]->(xp51)
+WITH v51
+UNWIND ['Consulta', 'Diagnóstico', 'Salud', 'Pacientes', 'Recetas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v51)-[:REQUIRES_SKILL]->(k);
+// === Oferta 52: Grupo Argos ===
+MERGE (v52:Vacancy {title: "Técnico Electricista – Armenia"})
+MERGE (comp52:Company {name: "Grupo Argos"})
+MERGE (city52:City {name: "Armenia"})
+MERGE (edu52:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp52:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v52)-[:PUBLISHED_BY]->(comp52)
+MERGE (v52)-[:LOCATED_IN]->(city52)
+MERGE (v52)-[:REQUIRES_EDUCATION]->(edu52)
+MERGE (v52)-[:REQUIRES_EXPERIENCE]->(xp52)
+WITH v52
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v52)-[:REQUIRES_SKILL]->(k);
+// === Oferta 53: Postobón ===
+MERGE (v53:Vacancy {title: "Ingeniero Mecánico – Medellín"})
+MERGE (comp53:Company {name: "Postobón"})
+MERGE (city53:City {name: "Medellín"})
+MERGE (edu53:EducationLevel {level: "sin requisitos"})
+MERGE (xp53:ExperienceLevel {level: "sin experiencia"})
+MERGE (v53)-[:PUBLISHED_BY]->(comp53)
+MERGE (v53)-[:LOCATED_IN]->(city53)
+MERGE (v53)-[:REQUIRES_EDUCATION]->(edu53)
+MERGE (v53)-[:REQUIRES_EXPERIENCE]->(xp53)
+WITH v53
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v53)-[:REQUIRES_SKILL]->(k);
+// === Oferta 54: Postobón ===
+MERGE (v54:Vacancy {title: "Agente Call Center – Manizales"})
+MERGE (comp54:Company {name: "Postobón"})
+MERGE (city54:City {name: "Manizales"})
+MERGE (edu54:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp54:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v54)-[:PUBLISHED_BY]->(comp54)
+MERGE (v54)-[:LOCATED_IN]->(city54)
+MERGE (v54)-[:REQUIRES_EDUCATION]->(edu54)
+MERGE (v54)-[:REQUIRES_EXPERIENCE]->(xp54)
+WITH v54
+UNWIND ['Atención', 'Cliente', 'Llamadas', 'Ventas', 'Comunicación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v54)-[:REQUIRES_SKILL]->(k);
+// === Oferta 55: Enel ===
+MERGE (v55:Vacancy {title: "Diseñador Gráfico – Bucaramanga"})
+MERGE (comp55:Company {name: "Enel"})
+MERGE (city55:City {name: "Bucaramanga"})
+MERGE (edu55:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp55:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v55)-[:PUBLISHED_BY]->(comp55)
+MERGE (v55)-[:LOCATED_IN]->(city55)
+MERGE (v55)-[:REQUIRES_EDUCATION]->(edu55)
+MERGE (v55)-[:REQUIRES_EXPERIENCE]->(xp55)
+WITH v55
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v55)-[:REQUIRES_SKILL]->(k);
+// === Oferta 56: Claro ===
+MERGE (v56:Vacancy {title: "Auxiliar de Bodega – Barranquilla"})
+MERGE (comp56:Company {name: "Claro"})
+MERGE (city56:City {name: "Barranquilla"})
+MERGE (edu56:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp56:ExperienceLevel {level: "sin experiencia"})
+MERGE (v56)-[:PUBLISHED_BY]->(comp56)
+MERGE (v56)-[:LOCATED_IN]->(city56)
+MERGE (v56)-[:REQUIRES_EDUCATION]->(edu56)
+MERGE (v56)-[:REQUIRES_EXPERIENCE]->(xp56)
+WITH v56
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v56)-[:REQUIRES_SKILL]->(k);
+// === Oferta 57: Cinemark ===
+MERGE (v57:Vacancy {title: "Médico General – Armenia"})
+MERGE (comp57:Company {name: "Cinemark"})
+MERGE (city57:City {name: "Armenia"})
+MERGE (edu57:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp57:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v57)-[:PUBLISHED_BY]->(comp57)
+MERGE (v57)-[:LOCATED_IN]->(city57)
+MERGE (v57)-[:REQUIRES_EDUCATION]->(edu57)
+MERGE (v57)-[:REQUIRES_EXPERIENCE]->(xp57)
+WITH v57
+UNWIND ['Consulta', 'Diagnóstico', 'Salud', 'Pacientes', 'Recetas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v57)-[:REQUIRES_SKILL]->(k);
+// === Oferta 58: Postobón ===
+MERGE (v58:Vacancy {title: "Auxiliar de Bodega – Bogotá"})
+MERGE (comp58:Company {name: "Postobón"})
+MERGE (city58:City {name: "Bogotá"})
+MERGE (edu58:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp58:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v58)-[:PUBLISHED_BY]->(comp58)
+MERGE (v58)-[:LOCATED_IN]->(city58)
+MERGE (v58)-[:REQUIRES_EDUCATION]->(edu58)
+MERGE (v58)-[:REQUIRES_EXPERIENCE]->(xp58)
+WITH v58
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v58)-[:REQUIRES_SKILL]->(k);
+// === Oferta 59: Cinemark ===
+MERGE (v59:Vacancy {title: "Ingeniero Mecánico – Cali"})
+MERGE (comp59:Company {name: "Cinemark"})
+MERGE (city59:City {name: "Cali"})
+MERGE (edu59:EducationLevel {level: "sin requisitos"})
+MERGE (xp59:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v59)-[:PUBLISHED_BY]->(comp59)
+MERGE (v59)-[:LOCATED_IN]->(city59)
+MERGE (v59)-[:REQUIRES_EDUCATION]->(edu59)
+MERGE (v59)-[:REQUIRES_EXPERIENCE]->(xp59)
+WITH v59
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v59)-[:REQUIRES_SKILL]->(k);
+// === Oferta 60: Decathlon ===
+MERGE (v60:Vacancy {title: "Ingeniero Mecánico – Armenia"})
+MERGE (comp60:Company {name: "Decathlon"})
+MERGE (city60:City {name: "Armenia"})
+MERGE (edu60:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp60:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v60)-[:PUBLISHED_BY]->(comp60)
+MERGE (v60)-[:LOCATED_IN]->(city60)
+MERGE (v60)-[:REQUIRES_EDUCATION]->(edu60)
+MERGE (v60)-[:REQUIRES_EXPERIENCE]->(xp60)
+WITH v60
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v60)-[:REQUIRES_SKILL]->(k);
+// === Oferta 61: Decathlon ===
+MERGE (v61:Vacancy {title: "Técnico Electricista – Armenia"})
+MERGE (comp61:Company {name: "Decathlon"})
+MERGE (city61:City {name: "Armenia"})
+MERGE (edu61:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp61:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v61)-[:PUBLISHED_BY]->(comp61)
+MERGE (v61)-[:LOCATED_IN]->(city61)
+MERGE (v61)-[:REQUIRES_EDUCATION]->(edu61)
+MERGE (v61)-[:REQUIRES_EXPERIENCE]->(xp61)
+WITH v61
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v61)-[:REQUIRES_SKILL]->(k);
+// === Oferta 62: Nutresa ===
+MERGE (v62:Vacancy {title: "Diseñador Gráfico – Pereira"})
+MERGE (comp62:Company {name: "Nutresa"})
+MERGE (city62:City {name: "Pereira"})
+MERGE (edu62:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp62:ExperienceLevel {level: "sin experiencia"})
+MERGE (v62)-[:PUBLISHED_BY]->(comp62)
+MERGE (v62)-[:LOCATED_IN]->(city62)
+MERGE (v62)-[:REQUIRES_EDUCATION]->(edu62)
+MERGE (v62)-[:REQUIRES_EXPERIENCE]->(xp62)
+WITH v62
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v62)-[:REQUIRES_SKILL]->(k);
+// === Oferta 63: Teleperformance ===
+MERGE (v63:Vacancy {title: "Recepcionista Hotelera – Cartagena"})
+MERGE (comp63:Company {name: "Teleperformance"})
+MERGE (city63:City {name: "Cartagena"})
+MERGE (edu63:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp63:ExperienceLevel {level: "sin experiencia"})
+MERGE (v63)-[:PUBLISHED_BY]->(comp63)
+MERGE (v63)-[:LOCATED_IN]->(city63)
+MERGE (v63)-[:REQUIRES_EDUCATION]->(edu63)
+MERGE (v63)-[:REQUIRES_EXPERIENCE]->(xp63)
+WITH v63
+UNWIND ['Atención al cliente', 'Recepción', 'Reservas', 'Comunicación', 'Hotel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v63)-[:REQUIRES_SKILL]->(k);
+// === Oferta 64: Bancolombia ===
+MERGE (v64:Vacancy {title: "Diseñador Gráfico – Cartagena"})
+MERGE (comp64:Company {name: "Bancolombia"})
+MERGE (city64:City {name: "Cartagena"})
+MERGE (edu64:EducationLevel {level: "sin requisitos"})
+MERGE (xp64:ExperienceLevel {level: "sin experiencia"})
+MERGE (v64)-[:PUBLISHED_BY]->(comp64)
+MERGE (v64)-[:LOCATED_IN]->(city64)
+MERGE (v64)-[:REQUIRES_EDUCATION]->(edu64)
+MERGE (v64)-[:REQUIRES_EXPERIENCE]->(xp64)
+WITH v64
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v64)-[:REQUIRES_SKILL]->(k);
+// === Oferta 65: Nutresa ===
+MERGE (v65:Vacancy {title: "Desarrollador Frontend – Manizales"})
+MERGE (comp65:Company {name: "Nutresa"})
+MERGE (city65:City {name: "Manizales"})
+MERGE (edu65:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp65:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v65)-[:PUBLISHED_BY]->(comp65)
+MERGE (v65)-[:LOCATED_IN]->(city65)
+MERGE (v65)-[:REQUIRES_EDUCATION]->(edu65)
+MERGE (v65)-[:REQUIRES_EXPERIENCE]->(xp65)
+WITH v65
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v65)-[:REQUIRES_SKILL]->(k);
+// === Oferta 66: Postobón ===
+MERGE (v66:Vacancy {title: "Psicólogo Organizacional – Manizales"})
+MERGE (comp66:Company {name: "Postobón"})
+MERGE (city66:City {name: "Manizales"})
+MERGE (edu66:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp66:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v66)-[:PUBLISHED_BY]->(comp66)
+MERGE (v66)-[:LOCATED_IN]->(city66)
+MERGE (v66)-[:REQUIRES_EDUCATION]->(edu66)
+MERGE (v66)-[:REQUIRES_EXPERIENCE]->(xp66)
+WITH v66
+UNWIND ['Selección', 'RRHH', 'Entrevistas', 'Evaluación', 'Bienestar'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v66)-[:REQUIRES_SKILL]->(k);
+// === Oferta 67: Decathlon ===
+MERGE (v67:Vacancy {title: "Técnico Electricista – Pereira"})
+MERGE (comp67:Company {name: "Decathlon"})
+MERGE (city67:City {name: "Pereira"})
+MERGE (edu67:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp67:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v67)-[:PUBLISHED_BY]->(comp67)
+MERGE (v67)-[:LOCATED_IN]->(city67)
+MERGE (v67)-[:REQUIRES_EDUCATION]->(edu67)
+MERGE (v67)-[:REQUIRES_EXPERIENCE]->(xp67)
+WITH v67
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v67)-[:REQUIRES_SKILL]->(k);
+// === Oferta 68: Alkosto ===
+MERGE (v68:Vacancy {title: "Auxiliar de Bodega – Cartagena"})
+MERGE (comp68:Company {name: "Alkosto"})
+MERGE (city68:City {name: "Cartagena"})
+MERGE (edu68:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp68:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v68)-[:PUBLISHED_BY]->(comp68)
+MERGE (v68)-[:LOCATED_IN]->(city68)
+MERGE (v68)-[:REQUIRES_EDUCATION]->(edu68)
+MERGE (v68)-[:REQUIRES_EXPERIENCE]->(xp68)
+WITH v68
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v68)-[:REQUIRES_SKILL]->(k);
+// === Oferta 69: Grupo Argos ===
+MERGE (v69:Vacancy {title: "Técnico en Redes – Manizales"})
+MERGE (comp69:Company {name: "Grupo Argos"})
+MERGE (city69:City {name: "Manizales"})
+MERGE (edu69:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp69:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v69)-[:PUBLISHED_BY]->(comp69)
+MERGE (v69)-[:LOCATED_IN]->(city69)
+MERGE (v69)-[:REQUIRES_EDUCATION]->(edu69)
+MERGE (v69)-[:REQUIRES_EXPERIENCE]->(xp69)
+WITH v69
+UNWIND ['Redes', 'Cisco', 'Mantenimiento', 'Seguridad', 'Cableado'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v69)-[:REQUIRES_SKILL]->(k);
+// === Oferta 70: Bancolombia ===
+MERGE (v70:Vacancy {title: "Desarrollador Frontend – Villavicencio"})
+MERGE (comp70:Company {name: "Bancolombia"})
+MERGE (city70:City {name: "Villavicencio"})
+MERGE (edu70:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp70:ExperienceLevel {level: "sin experiencia"})
+MERGE (v70)-[:PUBLISHED_BY]->(comp70)
+MERGE (v70)-[:LOCATED_IN]->(city70)
+MERGE (v70)-[:REQUIRES_EDUCATION]->(edu70)
+MERGE (v70)-[:REQUIRES_EXPERIENCE]->(xp70)
+WITH v70
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v70)-[:REQUIRES_SKILL]->(k);
+// === Oferta 71: Postobón ===
+MERGE (v71:Vacancy {title: "Recepcionista Hotelera – Barranquilla"})
+MERGE (comp71:Company {name: "Postobón"})
+MERGE (city71:City {name: "Barranquilla"})
+MERGE (edu71:EducationLevel {level: "sin requisitos"})
+MERGE (xp71:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v71)-[:PUBLISHED_BY]->(comp71)
+MERGE (v71)-[:LOCATED_IN]->(city71)
+MERGE (v71)-[:REQUIRES_EDUCATION]->(edu71)
+MERGE (v71)-[:REQUIRES_EXPERIENCE]->(xp71)
+WITH v71
+UNWIND ['Atención al cliente', 'Recepción', 'Reservas', 'Comunicación', 'Hotel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v71)-[:REQUIRES_SKILL]->(k);
+// === Oferta 72: Nutresa ===
+MERGE (v72:Vacancy {title: "Diseñador Gráfico – Medellín"})
+MERGE (comp72:Company {name: "Nutresa"})
+MERGE (city72:City {name: "Medellín"})
+MERGE (edu72:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp72:ExperienceLevel {level: "sin experiencia"})
+MERGE (v72)-[:PUBLISHED_BY]->(comp72)
+MERGE (v72)-[:LOCATED_IN]->(city72)
+MERGE (v72)-[:REQUIRES_EDUCATION]->(edu72)
+MERGE (v72)-[:REQUIRES_EXPERIENCE]->(xp72)
+WITH v72
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v72)-[:REQUIRES_SKILL]->(k);
+// === Oferta 73: Davivienda ===
+MERGE (v73:Vacancy {title: "Community Manager – Pereira"})
+MERGE (comp73:Company {name: "Davivienda"})
+MERGE (city73:City {name: "Pereira"})
+MERGE (edu73:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp73:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v73)-[:PUBLISHED_BY]->(comp73)
+MERGE (v73)-[:LOCATED_IN]->(city73)
+MERGE (v73)-[:REQUIRES_EDUCATION]->(edu73)
+MERGE (v73)-[:REQUIRES_EXPERIENCE]->(xp73)
+WITH v73
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v73)-[:REQUIRES_SKILL]->(k);
+// === Oferta 74: Cinemark ===
+MERGE (v74:Vacancy {title: "Supervisor de Producción – Cartagena"})
+MERGE (comp74:Company {name: "Cinemark"})
+MERGE (city74:City {name: "Cartagena"})
+MERGE (edu74:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp74:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v74)-[:PUBLISHED_BY]->(comp74)
+MERGE (v74)-[:LOCATED_IN]->(city74)
+MERGE (v74)-[:REQUIRES_EDUCATION]->(edu74)
+MERGE (v74)-[:REQUIRES_EXPERIENCE]->(xp74)
+WITH v74
+UNWIND ['Producción', 'Supervisión', 'Indicadores', 'Mejora continua', 'Turnos'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v74)-[:REQUIRES_SKILL]->(k);
+// === Oferta 75: Teleperformance ===
+MERGE (v75:Vacancy {title: "Diseñador Gráfico – Medellín"})
+MERGE (comp75:Company {name: "Teleperformance"})
+MERGE (city75:City {name: "Medellín"})
+MERGE (edu75:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp75:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v75)-[:PUBLISHED_BY]->(comp75)
+MERGE (v75)-[:LOCATED_IN]->(city75)
+MERGE (v75)-[:REQUIRES_EDUCATION]->(edu75)
+MERGE (v75)-[:REQUIRES_EXPERIENCE]->(xp75)
+WITH v75
+UNWIND ['Photoshop', 'Illustrator', 'Creatividad', 'Diseño', 'Figma'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v75)-[:REQUIRES_SKILL]->(k);
+// === Oferta 76: Davivienda ===
+MERGE (v76:Vacancy {title: "Técnico Electricista – Cartagena"})
+MERGE (comp76:Company {name: "Davivienda"})
+MERGE (city76:City {name: "Cartagena"})
+MERGE (edu76:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp76:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v76)-[:PUBLISHED_BY]->(comp76)
+MERGE (v76)-[:LOCATED_IN]->(city76)
+MERGE (v76)-[:REQUIRES_EDUCATION]->(edu76)
+MERGE (v76)-[:REQUIRES_EXPERIENCE]->(xp76)
+WITH v76
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v76)-[:REQUIRES_SKILL]->(k);
+// === Oferta 77: Tigo ===
+MERGE (v77:Vacancy {title: "Abogado Junior – Villavicencio"})
+MERGE (comp77:Company {name: "Tigo"})
+MERGE (city77:City {name: "Villavicencio"})
+MERGE (edu77:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp77:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v77)-[:PUBLISHED_BY]->(comp77)
+MERGE (v77)-[:LOCATED_IN]->(city77)
+MERGE (v77)-[:REQUIRES_EDUCATION]->(edu77)
+MERGE (v77)-[:REQUIRES_EXPERIENCE]->(xp77)
+WITH v77
+UNWIND ['Derecho', 'Contratos', 'Procesos', 'Normativa', 'Legal'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v77)-[:REQUIRES_SKILL]->(k);
+// === Oferta 78: Postobón ===
+MERGE (v78:Vacancy {title: "Desarrollador Frontend – Manizales"})
+MERGE (comp78:Company {name: "Postobón"})
+MERGE (city78:City {name: "Manizales"})
+MERGE (edu78:EducationLevel {level: "sin requisitos"})
+MERGE (xp78:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v78)-[:PUBLISHED_BY]->(comp78)
+MERGE (v78)-[:LOCATED_IN]->(city78)
+MERGE (v78)-[:REQUIRES_EDUCATION]->(edu78)
+MERGE (v78)-[:REQUIRES_EXPERIENCE]->(xp78)
+WITH v78
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v78)-[:REQUIRES_SKILL]->(k);
+// === Oferta 79: Teleperformance ===
+MERGE (v79:Vacancy {title: "Contador Público – Armenia"})
+MERGE (comp79:Company {name: "Teleperformance"})
+MERGE (city79:City {name: "Armenia"})
+MERGE (edu79:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp79:ExperienceLevel {level: "sin experiencia"})
+MERGE (v79)-[:PUBLISHED_BY]->(comp79)
+MERGE (v79)-[:LOCATED_IN]->(city79)
+MERGE (v79)-[:REQUIRES_EDUCATION]->(edu79)
+MERGE (v79)-[:REQUIRES_EXPERIENCE]->(xp79)
+WITH v79
+UNWIND ['Contabilidad', 'Impuestos', 'NIIF', 'Auditoría', 'Excel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v79)-[:REQUIRES_SKILL]->(k);
+// === Oferta 80: Bancolombia ===
+MERGE (v80:Vacancy {title: "Community Manager – Villavicencio"})
+MERGE (comp80:Company {name: "Bancolombia"})
+MERGE (city80:City {name: "Villavicencio"})
+MERGE (edu80:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp80:ExperienceLevel {level: "sin experiencia"})
+MERGE (v80)-[:PUBLISHED_BY]->(comp80)
+MERGE (v80)-[:LOCATED_IN]->(city80)
+MERGE (v80)-[:REQUIRES_EDUCATION]->(edu80)
+MERGE (v80)-[:REQUIRES_EXPERIENCE]->(xp80)
+WITH v80
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v80)-[:REQUIRES_SKILL]->(k);
+// === Oferta 81: Bancolombia ===
+MERGE (v81:Vacancy {title: "Agente Call Center – Cali"})
+MERGE (comp81:Company {name: "Bancolombia"})
+MERGE (city81:City {name: "Cali"})
+MERGE (edu81:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp81:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v81)-[:PUBLISHED_BY]->(comp81)
+MERGE (v81)-[:LOCATED_IN]->(city81)
+MERGE (v81)-[:REQUIRES_EDUCATION]->(edu81)
+MERGE (v81)-[:REQUIRES_EXPERIENCE]->(xp81)
+WITH v81
+UNWIND ['Atención', 'Cliente', 'Llamadas', 'Ventas', 'Comunicación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v81)-[:REQUIRES_SKILL]->(k);
+// === Oferta 82: Sodexo ===
+MERGE (v82:Vacancy {title: "Ingeniero de Software – Cartagena"})
+MERGE (comp82:Company {name: "Sodexo"})
+MERGE (city82:City {name: "Cartagena"})
+MERGE (edu82:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp82:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v82)-[:PUBLISHED_BY]->(comp82)
+MERGE (v82)-[:LOCATED_IN]->(city82)
+MERGE (v82)-[:REQUIRES_EDUCATION]->(edu82)
+MERGE (v82)-[:REQUIRES_EXPERIENCE]->(xp82)
+WITH v82
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v82)-[:REQUIRES_SKILL]->(k);
+// === Oferta 83: Alkosto ===
+MERGE (v83:Vacancy {title: "Técnico en Redes – Bucaramanga"})
+MERGE (comp83:Company {name: "Alkosto"})
+MERGE (city83:City {name: "Bucaramanga"})
+MERGE (edu83:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp83:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v83)-[:PUBLISHED_BY]->(comp83)
+MERGE (v83)-[:LOCATED_IN]->(city83)
+MERGE (v83)-[:REQUIRES_EDUCATION]->(edu83)
+MERGE (v83)-[:REQUIRES_EXPERIENCE]->(xp83)
+WITH v83
+UNWIND ['Redes', 'Cisco', 'Mantenimiento', 'Seguridad', 'Cableado'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v83)-[:REQUIRES_SKILL]->(k);
+// === Oferta 84: Tigo ===
+MERGE (v84:Vacancy {title: "Ingeniero Mecánico – Cali"})
+MERGE (comp84:Company {name: "Tigo"})
+MERGE (city84:City {name: "Cali"})
+MERGE (edu84:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp84:ExperienceLevel {level: "sin experiencia"})
+MERGE (v84)-[:PUBLISHED_BY]->(comp84)
+MERGE (v84)-[:LOCATED_IN]->(city84)
+MERGE (v84)-[:REQUIRES_EDUCATION]->(edu84)
+MERGE (v84)-[:REQUIRES_EXPERIENCE]->(xp84)
+WITH v84
+UNWIND ['CAD', 'Mecánica', 'Diseño industrial', 'Producción', 'AutoCAD'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v84)-[:REQUIRES_SKILL]->(k);
+// === Oferta 85: Sodexo ===
+MERGE (v85:Vacancy {title: "Community Manager – Villavicencio"})
+MERGE (comp85:Company {name: "Sodexo"})
+MERGE (city85:City {name: "Villavicencio"})
+MERGE (edu85:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp85:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v85)-[:PUBLISHED_BY]->(comp85)
+MERGE (v85)-[:LOCATED_IN]->(city85)
+MERGE (v85)-[:REQUIRES_EDUCATION]->(edu85)
+MERGE (v85)-[:REQUIRES_EXPERIENCE]->(xp85)
+WITH v85
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v85)-[:REQUIRES_SKILL]->(k);
+// === Oferta 86: Tigo ===
+MERGE (v86:Vacancy {title: "Desarrollador Frontend – Manizales"})
+MERGE (comp86:Company {name: "Tigo"})
+MERGE (city86:City {name: "Manizales"})
+MERGE (edu86:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp86:ExperienceLevel {level: "sin experiencia"})
+MERGE (v86)-[:PUBLISHED_BY]->(comp86)
+MERGE (v86)-[:LOCATED_IN]->(city86)
+MERGE (v86)-[:REQUIRES_EDUCATION]->(edu86)
+MERGE (v86)-[:REQUIRES_EXPERIENCE]->(xp86)
+WITH v86
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v86)-[:REQUIRES_SKILL]->(k);
+// === Oferta 87: Claro ===
+MERGE (v87:Vacancy {title: "Recepcionista Hotelera – Pereira"})
+MERGE (comp87:Company {name: "Claro"})
+MERGE (city87:City {name: "Pereira"})
+MERGE (edu87:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp87:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v87)-[:PUBLISHED_BY]->(comp87)
+MERGE (v87)-[:LOCATED_IN]->(city87)
+MERGE (v87)-[:REQUIRES_EDUCATION]->(edu87)
+MERGE (v87)-[:REQUIRES_EXPERIENCE]->(xp87)
+WITH v87
+UNWIND ['Atención al cliente', 'Recepción', 'Reservas', 'Comunicación', 'Hotel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v87)-[:REQUIRES_SKILL]->(k);
+// === Oferta 88: Postobón ===
+MERGE (v88:Vacancy {title: "Supervisor de Producción – Pereira"})
+MERGE (comp88:Company {name: "Postobón"})
+MERGE (city88:City {name: "Pereira"})
+MERGE (edu88:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp88:ExperienceLevel {level: "sin experiencia"})
+MERGE (v88)-[:PUBLISHED_BY]->(comp88)
+MERGE (v88)-[:LOCATED_IN]->(city88)
+MERGE (v88)-[:REQUIRES_EDUCATION]->(edu88)
+MERGE (v88)-[:REQUIRES_EXPERIENCE]->(xp88)
+WITH v88
+UNWIND ['Producción', 'Supervisión', 'Indicadores', 'Mejora continua', 'Turnos'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v88)-[:REQUIRES_SKILL]->(k);
+// === Oferta 89: Teleperformance ===
+MERGE (v89:Vacancy {title: "Community Manager – Cali"})
+MERGE (comp89:Company {name: "Teleperformance"})
+MERGE (city89:City {name: "Cali"})
+MERGE (edu89:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp89:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v89)-[:PUBLISHED_BY]->(comp89)
+MERGE (v89)-[:LOCATED_IN]->(city89)
+MERGE (v89)-[:REQUIRES_EDUCATION]->(edu89)
+MERGE (v89)-[:REQUIRES_EXPERIENCE]->(xp89)
+WITH v89
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v89)-[:REQUIRES_SKILL]->(k);
+// === Oferta 90: Claro ===
+MERGE (v90:Vacancy {title: "Auxiliar de Bodega – Cali"})
+MERGE (comp90:Company {name: "Claro"})
+MERGE (city90:City {name: "Cali"})
+MERGE (edu90:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp90:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v90)-[:PUBLISHED_BY]->(comp90)
+MERGE (v90)-[:LOCATED_IN]->(city90)
+MERGE (v90)-[:REQUIRES_EDUCATION]->(edu90)
+MERGE (v90)-[:REQUIRES_EXPERIENCE]->(xp90)
+WITH v90
+UNWIND ['Inventario', 'Bodega', 'Logística', 'Empaque', 'Orden'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v90)-[:REQUIRES_SKILL]->(k);
+// === Oferta 91: Alkosto ===
+MERGE (v91:Vacancy {title: "Community Manager – Cartagena"})
+MERGE (comp91:Company {name: "Alkosto"})
+MERGE (city91:City {name: "Cartagena"})
+MERGE (edu91:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp91:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v91)-[:PUBLISHED_BY]->(comp91)
+MERGE (v91)-[:LOCATED_IN]->(city91)
+MERGE (v91)-[:REQUIRES_EDUCATION]->(edu91)
+MERGE (v91)-[:REQUIRES_EXPERIENCE]->(xp91)
+WITH v91
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v91)-[:REQUIRES_SKILL]->(k);
+// === Oferta 92: Cinemark ===
+MERGE (v92:Vacancy {title: "Desarrollador Frontend – Pereira"})
+MERGE (comp92:Company {name: "Cinemark"})
+MERGE (city92:City {name: "Pereira"})
+MERGE (edu92:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp92:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v92)-[:PUBLISHED_BY]->(comp92)
+MERGE (v92)-[:LOCATED_IN]->(city92)
+MERGE (v92)-[:REQUIRES_EDUCATION]->(edu92)
+MERGE (v92)-[:REQUIRES_EXPERIENCE]->(xp92)
+WITH v92
+UNWIND ['HTML', 'CSS', 'React', 'JavaScript', 'UI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v92)-[:REQUIRES_SKILL]->(k);
+// === Oferta 93: Falabella ===
+MERGE (v93:Vacancy {title: "Analista de Datos – Medellín"})
+MERGE (comp93:Company {name: "Falabella"})
+MERGE (city93:City {name: "Medellín"})
+MERGE (edu93:EducationLevel {level: "sin requisitos"})
+MERGE (xp93:ExperienceLevel {level: "1 año de experiencia"})
+MERGE (v93)-[:PUBLISHED_BY]->(comp93)
+MERGE (v93)-[:LOCATED_IN]->(city93)
+MERGE (v93)-[:REQUIRES_EDUCATION]->(edu93)
+MERGE (v93)-[:REQUIRES_EXPERIENCE]->(xp93)
+WITH v93
+UNWIND ['SQL', 'Python', 'Análisis de datos', 'Excel', 'Power BI'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v93)-[:REQUIRES_SKILL]->(k);
+// === Oferta 94: Falabella ===
+MERGE (v94:Vacancy {title: "Cocinero – Bucaramanga"})
+MERGE (comp94:Company {name: "Falabella"})
+MERGE (city94:City {name: "Bucaramanga"})
+MERGE (edu94:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp94:ExperienceLevel {level: "sin experiencia"})
+MERGE (v94)-[:PUBLISHED_BY]->(comp94)
+MERGE (v94)-[:LOCATED_IN]->(city94)
+MERGE (v94)-[:REQUIRES_EDUCATION]->(edu94)
+MERGE (v94)-[:REQUIRES_EXPERIENCE]->(xp94)
+WITH v94
+UNWIND ['Cocina', 'Recetas', 'Ingredientes', 'Higiene', 'Preparación'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v94)-[:REQUIRES_SKILL]->(k);
+// === Oferta 95: Davivienda ===
+MERGE (v95:Vacancy {title: "Community Manager – Bogotá"})
+MERGE (comp95:Company {name: "Davivienda"})
+MERGE (city95:City {name: "Bogotá"})
+MERGE (edu95:EducationLevel {level: "profesional hasta maestría"})
+MERGE (xp95:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v95)-[:PUBLISHED_BY]->(comp95)
+MERGE (v95)-[:LOCATED_IN]->(city95)
+MERGE (v95)-[:REQUIRES_EDUCATION]->(edu95)
+MERGE (v95)-[:REQUIRES_EXPERIENCE]->(xp95)
+WITH v95
+UNWIND ['Redes sociales', 'Marketing', 'Instagram', 'Facebook', 'Contenido'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v95)-[:REQUIRES_SKILL]->(k);
+// === Oferta 96: Cinemark ===
+MERGE (v96:Vacancy {title: "Contador Público – Cartagena"})
+MERGE (comp96:Company {name: "Cinemark"})
+MERGE (city96:City {name: "Cartagena"})
+MERGE (edu96:EducationLevel {level: "sin requisitos"})
+MERGE (xp96:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v96)-[:PUBLISHED_BY]->(comp96)
+MERGE (v96)-[:LOCATED_IN]->(city96)
+MERGE (v96)-[:REQUIRES_EDUCATION]->(edu96)
+MERGE (v96)-[:REQUIRES_EXPERIENCE]->(xp96)
+WITH v96
+UNWIND ['Contabilidad', 'Impuestos', 'NIIF', 'Auditoría', 'Excel'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v96)-[:REQUIRES_SKILL]->(k);
+// === Oferta 97: Alkosto ===
+MERGE (v97:Vacancy {title: "Técnico Electricista – Manizales"})
+MERGE (comp97:Company {name: "Alkosto"})
+MERGE (city97:City {name: "Manizales"})
+MERGE (edu97:EducationLevel {level: "sin requisitos"})
+MERGE (xp97:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v97)-[:PUBLISHED_BY]->(comp97)
+MERGE (v97)-[:LOCATED_IN]->(city97)
+MERGE (v97)-[:REQUIRES_EDUCATION]->(edu97)
+MERGE (v97)-[:REQUIRES_EXPERIENCE]->(xp97)
+WITH v97
+UNWIND ['Electricidad', 'Mantenimiento', 'Instalaciones', 'Cableado', 'Normas'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v97)-[:REQUIRES_SKILL]->(k);
+// === Oferta 98: Postobón ===
+MERGE (v98:Vacancy {title: "Ingeniero de Software – Cali"})
+MERGE (comp98:Company {name: "Postobón"})
+MERGE (city98:City {name: "Cali"})
+MERGE (edu98:EducationLevel {level: "tecnólogo hasta profesional"})
+MERGE (xp98:ExperienceLevel {level: "sin experiencia"})
+MERGE (v98)-[:PUBLISHED_BY]->(comp98)
+MERGE (v98)-[:LOCATED_IN]->(city98)
+MERGE (v98)-[:REQUIRES_EDUCATION]->(edu98)
+MERGE (v98)-[:REQUIRES_EXPERIENCE]->(xp98)
+WITH v98
+UNWIND ['Java', 'Spring Boot', 'Git', 'APIs', 'Testing'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v98)-[:REQUIRES_SKILL]->(k);
+// === Oferta 99: Alkosto ===
+MERGE (v99:Vacancy {title: "Auxiliar Logístico – Barranquilla"})
+MERGE (comp99:Company {name: "Alkosto"})
+MERGE (city99:City {name: "Barranquilla"})
+MERGE (edu99:EducationLevel {level: "técnico hasta profesional"})
+MERGE (xp99:ExperienceLevel {level: "2 años de experiencia"})
+MERGE (v99)-[:PUBLISHED_BY]->(comp99)
+MERGE (v99)-[:LOCATED_IN]->(city99)
+MERGE (v99)-[:REQUIRES_EDUCATION]->(edu99)
+MERGE (v99)-[:REQUIRES_EXPERIENCE]->(xp99)
+WITH v99
+UNWIND ['Logística', 'Transporte', 'Alistamiento', 'Pedidos', 'Ruta'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v99)-[:REQUIRES_SKILL]->(k);
+
+// === Oferta 100: Cinemark ===
+MERGE (v100:Vacancy {title: "Auxiliar Logístico – Cartagena"})
+MERGE (comp100:Company {name: "Cinemark"})
+MERGE (city100:City {name: "Cartagena"})
+MERGE (edu100:EducationLevel {level: "Bachillerato completo"})
+MERGE (xp100:ExperienceLevel {level: "3 años de experiencia"})
+MERGE (v100)-[:PUBLISHED_BY]->(comp100)
+MERGE (v100)-[:LOCATED_IN]->(city100)
+MERGE (v100)-[:REQUIRES_EDUCATION]->(edu100)
+MERGE (v100)-[:REQUIRES_EXPERIENCE]->(xp100)
+WITH v100
+UNWIND ['Logística', 'Transporte', 'Alistamiento', 'Pedidos', 'Ruta'] AS kw
+MERGE (k:Skill {name: kw})
+MERGE (v100)-[:REQUIRES_SKILL]->(k);

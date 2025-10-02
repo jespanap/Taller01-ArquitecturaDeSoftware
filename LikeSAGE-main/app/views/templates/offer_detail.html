@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ offer.titulo }} - Detalles{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow mt-6">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">{{ offer.titulo }}</h1>
+        <p class="text-gray-600 text-lg"><strong>Empresa:</strong> {{ offer.empresa }}</p>
+        <p class="text-gray-600"><strong>Ciudad:</strong> {{ offer.ciudad }}</p>
+        <p class="text-gray-600"><strong>Nivel educativo:</strong> {{ offer.nivel_educativo }}</p>
+        <p class="text-gray-600"><strong>Experiencia requerida:</strong> {{ offer.nivel_experiencia }}</p>
+    </div>
+
+    <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700">Descripción del empleo</h2>
+        <p class="text-gray-700 mt-2">{{ offer.descripcion }}</p>
+    </div>
+
+    <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700">Habilidades requeridas</h2>
+        <ul class="list-disc list-inside text-gray-600 mt-2">
+            {% for h in offer.habilidades %}
+                <li>{{ h }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if user %}
+    <div class="flex justify-end space-x-4 mt-8">
+        <form method="post" action="/offers/interact">
+            <input type="hidden" name="titulo" value="{{ offer.titulo }}">
+            <input type="hidden" name="accion" value="like">
+            <button type="submit" class="text-red-500 hover:text-red-700 text-xl" title="Me gusta" onclick="animateLike(this)">
+                ❤️
+            </button>
+        </form>
+
+        <form method="post" action="/offers/interact">
+            <input type="hidden" name="titulo" value="{{ offer.titulo }}">
+            <input type="hidden" name="accion" value="save">
+            <button type="submit" class="text-blue-500 hover:text-blue-700 text-xl" title="Guardar" onclick="animateSave(this)">
+                📌
+            </button>
+        </form>
+
+        <form method="post" action="/offers/share">
+            <input type="hidden" name="vacancy_title" value="{{ offer.titulo }}">
+            <button type="submit" class="text-green-500 hover:text-green-700 text-xl" title="Compartir">
+                🔗
+            </button>
+        </form>
+    </div>
+    {% endif %}
+
+    <div class="mt-10 text-center">
+        <a href="/offers" class="text-indigo-600 hover:underline">⬅️ Volver a las ofertas</a>
+    </div>
+</div>
+
+<script>
+    function animateLike(button) {
+        button.classList.add('bump');
+        setTimeout(() => button.classList.remove('bump'), 400);
+    }
+
+    function animateSave(button) {
+        button.classList.add('spin');
+        setTimeout(() => button.classList.remove('spin'), 600);
+    }
+</script>
+{% endblock %}

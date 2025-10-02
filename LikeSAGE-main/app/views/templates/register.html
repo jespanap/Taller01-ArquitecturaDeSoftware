@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+<form method="post" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-xl" id="register-form">
+    {% if error %}
+        <p class="text-red-500 mb-4">{{ error }}</p>
+    {% endif %}
+
+    <!-- Paso 1: Correo y contraseña -->
+    <div id="step-1">
+        <h2 class="text-xl font-semibold text-center mb-4">Información básica</h2>
+        <div class="mb-4">
+            <label class="block text-gray-700">Correo electrónico</label>
+            <input type="email" name="correo" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Contraseña</label>
+            <input type="password" name="password" required class="w-full p-2 border rounded">
+        </div>
+        <button type="button" onclick="nextStep(2)" class="w-full p-2 bg-blue-500 text-white rounded">Siguiente</button>
+    </div>
+
+    <!-- Paso 2: Datos personales -->
+    <div id="step-2" class="hidden">
+        <h2 class="text-xl font-semibold text-center mb-4">Datos personales</h2>
+        <div class="flex gap-4 mb-4">
+            <div class="w-1/2">
+                <label class="block text-gray-700">Nombre</label>
+                <input type="text" name="nombre" required class="w-full p-2 border rounded">
+            </div>
+            <div class="w-1/2">
+                <label class="block text-gray-700">Apellido</label>
+                <input type="text" name="apellido" required class="w-full p-2 border rounded">
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Teléfono</label>
+            <input type="text" name="telefono" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">País</label>
+            <select name="pais" required class="w-full p-2 border rounded">
+                <option value="">Selecciona</option>
+                <option value="Colombia">Colombia</option>
+                <option value="México">México</option>
+                <option value="Argentina">Argentina</option>
+            </select>
+        </div>
+        <button type="button" onclick="nextStep(3)" class="w-full p-2 bg-blue-500 text-white rounded">Siguiente</button>
+    </div>
+
+    <!-- Paso 3: Preferencias laborales -->
+    <div id="step-3" class="hidden">
+        <h2 class="text-xl font-semibold text-center mb-4">Preferencias laborales</h2>
+        <div class="mb-4">
+            <label class="block text-gray-700">Sectores (máx 5)</label>
+            <div class="mb-4">
+              <label class="block text-gray-700">Cargo deseado</label>
+              <input type="text" name="cargo" required class="w-full p-2 border rounded">
+          </div>
+      
+          <div class="mb-4">
+              <label class="block text-gray-700">Salario mínimo esperado</label>
+              <input type="number" name="salario_minimo" required class="w-full p-2 border rounded" placeholder="0">
+          </div>
+      
+          <div class="mb-4">
+              <label class="block text-gray-700">Nivel de estudios</label>
+              <select name="nivel_estudios" required class="w-full p-2 border rounded">
+                  <option value="">Selecciona</option>
+                  <option value="secundaria">Secundaria</option>
+                  <option value="tecnico">Técnico</option>
+                  <option value="tecnologo">Tecnólogo</option>
+                  <option value="pregrado">Pregrado</option>
+                  <option value="posgrado">Posgrado</option>
+              </select>
+          </div>
+        </div>
+        <div class="mb-4">
+        <label>Sectores laborales (máximo 5):</label><br>
+        <div id="sectores-container">
+          <label><input type="checkbox" name="sectores" value="tecnologia"> Tecnología</label><br>
+          <label><input type="checkbox" name="sectores" value="salud"> Salud</label><br>
+          <label><input type="checkbox" name="sectores" value="educacion"> Educación</label><br>
+          <label><input type="checkbox" name="sectores" value="construccion"> Construcción</label><br>
+          <label><input type="checkbox" name="sectores" value="finanzas"> Finanzas</label><br>
+          <label><input type="checkbox" name="sectores" value="turismo"> Turismo</label><br>
+          <label><input type="checkbox" name="sectores" value="agricultura"> Agricultura</label><br>
+          <label><input type="checkbox" name="sectores" value="manufactura"> Manufactura</label><br>
+          <label><input type="checkbox" name="sectores" value="comercio"> Comercio</label><br>
+          <label><input type="checkbox" name="sectores" value="transporte"> Transporte</label><br>
+        </div>
+        <p id="sectores-error" style="color: red; display: none;">Solo puedes seleccionar hasta 5 sectores.</p>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Tipo de contrato</label>
+            <select name="tipo_contrato" required class="w-full p-2 border rounded">
+                <option value="temporal">Temporal</option>
+                <option value="indefinido">Indefinido</option>
+                <option value="practicas">Prácticas</option>
+            </select>
+        </div>     
+        <button type="button" onclick="nextStep(4)" class="w-full p-2 bg-blue-500 text-white rounded">Siguiente</button>
+    </div>
+
+    <!-- Paso 4: Condiciones -->
+  <div id="step-4" class="hidden">
+    <h2 class="text-xl font-semibold text-center mb-4">Condiciones laborales</h2>
+    
+    <div class="mb-4">
+        <label class="block text-gray-700">Lugar de trabajo</label>
+        <input type="text" name="lugar_trabajo" required class="w-full p-2 border rounded">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700">¿Trabajo remoto?</label>
+        <select name="trabajo_remoto" required class="w-full p-2 border rounded">
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700">¿Dispuesto a viajar?</label>
+        <select name="viajar" required class="w-full p-2 border rounded">
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700">¿Cambio de domicilio?</label>
+        <select name="cambio_domicilio" required class="w-full p-2 border rounded">
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700">Disponibilidad</label>
+        <input type="text" name="disponibilidad" required class="w-full p-2 border rounded" placeholder="Inmediata, 15 días, etc.">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700">¿Tienes alguna discapacidad?</label>
+        <input type="text" name="discapacidad" required class="w-full p-2 border rounded" placeholder="Ninguna, Visual, Auditiva, etc.">
+    </div>
+
+    <button type="submit" class="w-full mt-4 p-2 bg-green-500 text-white rounded">Registrar</button>
+  </div>
+</form>
+
+<script>
+    function nextStep(step) {
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById("step-" + i).classList.add("hidden");
+        }
+        document.getElementById("step-" + step).classList.remove("hidden");
+    }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const maxSeleccion = 5;
+    const checkboxes = document.querySelectorAll('#sectores-container input[type="checkbox"]');
+    const errorMsg = document.getElementById("sectores-error");
+
+    checkboxes.forEach(chk => {
+      chk.addEventListener('change', () => {
+        const seleccionados = Array.from(checkboxes).filter(c => c.checked);
+        if (seleccionados.length > maxSeleccion) {
+          chk.checked = false;
+          errorMsg.style.display = "block";
+        } else {
+          errorMsg.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

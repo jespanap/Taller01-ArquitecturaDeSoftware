@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Bolsa de Empleo{% endblock %}
+
+{% block content %}
+<div class="bg-blue-50 py-16 relative overflow-hidden">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        
+
+        <div class="bg-blue-50 py-16">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 relative">
+                <!-- Texto -->
+                <div class="max-w-xl z-10">
+                    <h1 class="text-4xl font-bold text-indigo-900 leading-tight">
+                        +100.000 trabajos disponibles
+                    </h1>
+                    <p class="text-lg text-indigo-800 mt-4">
+                        para temporada <a href="/offers" class="underline text-indigo-900 font-bold">¡conócelos y aplica!</a>
+                    </p>
+                    <form action="/buscar" method="get" class="mt-6 flex w-full max-w-md">
+                        <input type="text" name="q" placeholder="Buscar empleo por ciudad, cargo, empresa o profesión"
+                               class="flex-grow px-4 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                        <button type="submit" class="bg-indigo-900 text-white px-6 rounded-r-md hover:bg-indigo-800">
+                            Buscar
+                        </button>
+                    </form>
+                </div>
+        
+                <!-- Imagen no cortada -->
+                <div class="mt-10 md:mt-0 md:w-1/3 flex justify-center">
+                    <img src="{{ url_for('static', path='man.png') }}" alt="Persona"
+                         class="w-52 md:w-64 object-contain">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categorías -->
+<div class="container mx-auto py-10 px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="flex items-center bg-white p-4 rounded shadow cursor-pointer">
+            <span class="text-xl mr-3">📍</span> <span class="flex-grow">Empleos por <strong>Ciudades</strong></span>
+            <span>➡️</span>
+        </div>
+        <div class="flex items-center bg-white p-4 rounded shadow cursor-pointer">
+            <span class="text-xl mr-3">🏛️</span> <span class="flex-grow">Empleos por <strong>Sector laboral</strong></span>
+            <span>➡️</span>
+        </div>
+        <div class="flex items-center bg-white p-4 rounded shadow cursor-pointer">
+            <span class="text-xl mr-3">💼</span> <span class="flex-grow">Empleos por <strong>Cargo profesional</strong></span>
+            <span>➡️</span>
+        </div>
+        <div class="flex items-center bg-white p-4 rounded shadow cursor-pointer">
+            <span class="text-xl mr-3">📜</span> <span class="flex-grow">Todos los <strong>Empleos</strong></span>
+            <span>➡️</span>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de regalo -->
+<div class="bg-purple-700 text-white py-8 text-center">
+    <h3 class="text-2xl font-semibold">🎁 ¡Regala un empleo!</h3>
+    <p class="mt-2">Cambia el futuro de tus amigos regalándoles la oportunidad que están esperando.</p>
+</div>
+{% endblock %}
